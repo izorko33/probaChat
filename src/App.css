@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../public/img/annie-spratt-OTy0mkqc2Yk-unsplash.jpg) no-repeat center;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chatContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  box-shadow: 0 4px 30px 0 black;
+  border-radius: 15px;
+  background: transparent;
+}
+
+.chatHeader {
+  background: linear-gradient(180deg, #a766cf 0%, rgba(241, 240, 235, 0.51) 95%);
+  box-shadow: 0 4px 20px 0 black;
+  border-radius: 15px;
+  overflow: visible;
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.messagesList {
+  padding: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Messages-message.mainUser {
+  /*justify-content: flex-end;*/
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.content {
+  display: inline-block;
+}
+
+.currentMember>.content {
+  align-items: flex-end;
+}
+
+.Messages-message>.avatar {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 20px 5px;
+  /* background-color: #a766cf; */
+}
+
+.content>.username {
+  display: block;
+  color: gray;
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+
+.content>.text {
+  padding: 10px;
+  max-width: 400px;
+  margin: 0;
+  border-radius: 12px;
+  background-color: cornflowerblue;
   color: white;
+  display: inline-block;
 }
 
-.App-link {
-  color: #61dafb;
+.currentMember>.content .text {
+  background-color: orangered;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 
+
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 30px 0 black;
+  border-radius: 15px;
+  background: transparent;
+}
+
+.chatHeader {
+  background: linear-gradient(180deg, #a766cf 0%, rgba(241, 240, 235, 0.51) 95%);
+  box-shadow: 0 4px 20px 0 black;
+  border-radius: 15px;
+  overflow: visible;
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  color: rgb(0, 0, 0);
+}
+
+.messagesList {
+  padding: 20px 0;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+  flex-grow: 1;
+  padding-left: 0;
+  overflow: auto;
+
+}
+
+.Messages-message {
+  display: flex;
+  margin-top: 10px;
+}
+
+
+
+.mainUser {
+  flex-direction: row-reverse;
+  text-align: right;
+  align-items: flex-end;
+  padding: 5px;
+}
+
+.content {
+  display: inline-block;
+}
+
+.avatar {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 20px 5px;
+  background-color: #a766cf;
+}
+
+.username {
+  display: block;
+  color: rgb(116, 94, 94);
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.text {
+  padding: 10px 10px;
+  max-width: 400px;
+  margin: 0;
+  border-radius: 15px;
+  background-color: rgb(62, 99, 167);
+  color: white;
+  display: inline-block;
+} */
+
+.formInputs {
+  display: flex;
+  padding: 10px 5px;
+  justify-content: space-between;
+}
+
+.inputText {
+  width: 470px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: #eeebebbe;
+  border: 2px solid #50409a;
+  /* flex-grow: 1; */
+}
+
+.btn {
+  width: 90px;
+  padding: 7px;
+  font-size: 22px;
+  background-color: #50409a;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  margin-left: 5px;
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  background: #313866;
+  transform: translateX(-10px);
 }
